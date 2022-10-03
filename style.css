@@ -1,8 +1,20 @@
 body {
     text-align: center;
-    font-family: 'Happy Monkey', cursive;
+    font-family: 'Mouse Memoirs', sans-serif;
     text-shadow: 0 0 1px #ffffff;
     color: #222222;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 24px;
 }
 
 #game-cnt {
@@ -39,23 +51,26 @@ body {
 }
 
 .action-btn {
-    font-family: 'Happy Monkey', cursive;
-    font-size: 12px;
-    padding: 10px;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 20px;
+    padding: 8px;
     width: 90%;
     height: 40px;
     display: block;
-    margin: 10px auto;
+    margin: 5px auto;
     background-color: #CB997E;
     color: #222222;
-    text-shadow: 0 0 1px #ffffff;
     border: none;
     border-radius: 5px;
 
 }
 
-.action-btn:hover {
-    font-size: 13px;
+.action-btn:disabled {
+    background-color: red;
+}
+
+.action-btn:hover:not([disabled]) {
+    font-size: 24px;
     border-bottom: 2px solid #6B705C;
     border-right: 2px solid #6B705C;
 }
@@ -81,13 +96,10 @@ body {
 }
 
 .parameters-value {
-    font-size: 20px;
-}
-
-.parameters-value, .parameters-btns {
-    width: 50%;
+    background-color: grey;
+    font-size: 30px;
     text-align: center;
-    margin: auto;
+    margin: 0;
 }
 
 .parameters-inner {
@@ -101,5 +113,21 @@ body {
     background-color: #FFE8D6;
     margin: 2px;
     padding: 5px;
-    height: 25px;
+    height: auto;
 }
+
+.progress-cnt {
+    width: 100%;
+    background-color: grey;
+}
+
+.progress-bar {
+    width: 50%;
+    height: 40px;
+    background-color: green;
+}
+
+#hungry-progress, #windy-progress, #tired-progress {
+    width: 1%;
+}
+
