@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet"> 
+    <title>Baby Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-cnt">
+        <h1>JON'S BABY SIMULATOR</h1>
+        <div id="babystatus-cnt">
+            <div class="babystatus-col">
+                <button id="cuddle-btn" class="action-btn">CUDDLE</button>
+            </div>
+            <div class="babystatus-col">
+                <p id="babystatus-emoji">🙂</p>
+            </div>
+            <div class="babystatus-col">
+                <button id="dummy-btn" class="action-btn">DUMMY</button>
+            </div>
+        </div>
+        <div>
+
+        </div>
+        <div id="parameters-cnt">
+            <div class="parameters-row">
+                <div class = parameters-card>
+                    <h3 class="parameters-title">HUNGRY</h3>
+                    <div class="parameters-inner">
+                        <div class="parameters-value" id="hungry-el">000</div>
+                        <div class="parameters-btns">
+                            <button class="action-btn" id="prepare-btn">PREPARE</button>
+                            <button class="action-btn" id="feed-btn">FEED</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = parameters-card>
+                    <h3 class="parameters-title">TIRED</h3>
+                    <div class="parameters-inner">
+                        <div class="parameters-value">000</div>
+                        <div class="parameters-btns">
+                            <button class="action-btn">HOLD</button>
+                            <button class="action-btn">CRIB</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="parameters-msg" id="gamestatus-msg">You are resting</h2>
+            <div class="parameters-row">
+                <div class = parameters-card>
+                    <h3 class="parameters-title">WINDY</h3>
+                    <div class="parameters-inner">
+                        <div class="parameters-value" id="windy-el">000</div>
+                        <div class="parameters-btns">
+                            <button class="action-btn">BURP</button>
+                            <button class="action-btn">GRIPE WATER</button>
+                        </div>
+                    </div>
+                </div>
+                <div class = parameters-card>
+                    <h3 class="parameters-title">DIRTY</h3>
+                    <div class="parameters-inner">
+                        <div class="parameters-value">000</div>
+                        <div class="parameters-btns">
+                            <button class="action-btn">CHECK</button>
+                            <button class="action-btn">CHANGE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

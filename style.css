@@ -1,0 +1,105 @@
+body {
+    text-align: center;
+    font-family: 'Happy Monkey', cursive;
+    text-shadow: 0 0 1px #ffffff;
+    color: #222222;
+}
+
+#game-cnt {
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid #222222;
+    background-color: #FFE8D6;
+
+}
+
+#babystatus-cnt {
+
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+
+}
+
+.babystatus-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 33%;
+    text-align: center;
+    padding: 3px;
+    margin: 0;
+    background-color: #FFE8D6;
+
+}
+
+#babystatus-emoji {
+    font-size: 70px;
+    margin: 0;
+}
+
+.action-btn {
+    font-family: 'Happy Monkey', cursive;
+    font-size: 12px;
+    padding: 10px;
+    width: 90%;
+    height: 40px;
+    display: block;
+    margin: 10px auto;
+    background-color: #CB997E;
+    color: #222222;
+    text-shadow: 0 0 1px #ffffff;
+    border: none;
+    border-radius: 5px;
+
+}
+
+.action-btn:hover {
+    font-size: 13px;
+    border-bottom: 2px solid #6B705C;
+    border-right: 2px solid #6B705C;
+}
+
+.parameters-row {
+    display: flex;
+    justify-content: center;
+}
+
+.parameters-card {
+    width: 50%;
+    border: 1px solid #222222;
+    margin: 2px;
+}
+
+.parameters-title {
+    text-align: center;
+    background-color: #B7B7A4;
+    margin: 0;
+    padding: 5px;
+    border-bottom: 1px solid #222222;
+
+}
+
+.parameters-value {
+    font-size: 20px;
+}
+
+.parameters-value, .parameters-btns {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+.parameters-inner {
+    display: flex;
+    margin: 0;
+    padding: 5px;
+    background-color: #FFE8D6;
+}
+
+.parameters-msg {
+    background-color: #FFE8D6;
+    margin: 2px;
+    padding: 5px;
+    height: 25px;
+}
