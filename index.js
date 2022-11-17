@@ -1,6 +1,18 @@
 //nappy emojis: 💧 💩 ❓
 //baby emojis: 🙂😐☹️😭😴 (happy, neutral, sad, crying, asleep)
 
+//TODO
+
+//Sleep:
+//when baby is tired enough, rocking has chance to send it to sleep, quicker with more tiredness / rocking
+//putting down has a small chance to wake it up
+//when down and asleep, there is a chance it will wake up, increasing to 100% at tiredness = 0
+//poo, hunger and wind increase waking chance (decrease tiredness effect)
+//need isAsleep flag and sleep checking in ticker
+
+//Dummy: 
+//increases happiness a little
+
 const playerMessages = { //the text for the player message per state
     none:"resting",
     hold:"holding the baby",
@@ -15,7 +27,7 @@ const playerMessages = { //the text for the player message per state
 //game states
 var foodstate = 0; // 0 = food not ready, 1 = food ready, 2 = bottle dirty
 var playerState = "none"; // player status - see playermessages
-var babyState = "happy"; // baby state - happy, neutral (need word), sad, crying, asleep
+var babyState = "happy"; // baby state - happy, sad, crying, asleep
 var babyLocation = "in the crib"; // "in your arms" or "in the crib"
 var sinceWee = 0; //time since last wee happened
 var isWee = false; // true if there is a wee in the nappy
@@ -67,6 +79,7 @@ const tiredProgress = document.getElementById("tired-progress");
 const dirtyEl = document.getElementById("dirty-el");
 const playerstatusMsg = document.getElementById("playerstatus-msg");
 const babystatusMsg = document.getElementById("babystatus-msg");
+const babystatusEmoji = document.getElementById("babystatus-emoji")
 
 //button arrays
 const buttonRefs = [pickupBtn,foodBtn,windBtn,rockBtn,dummyBtn,nappyBtn];
@@ -118,6 +131,23 @@ function ticker() {
     if (tiredVar < 0) {tiredVar = 0;} //not below 0 (sleeping)
     sinceWee += dirtyDelta; //add to time since wee
     sincePoo += dirtyDelta; //and poo
+
+    //TODO - calculate babystate here
+    //if ispoo, or hungry or tired or windy is high = crying
+    //otherwise add up vars 
+
+    //babystate calculations
+    if (isPoo || hungryVar > 90 || windyVar > 90 || tiredVar > 90) {
+        babyState = "crying"
+    }
+    else if ((hungryVar + windyVar + tiredVar) > 200) {
+        babyState = "sad"
+    }
+    else {
+        babyState = "happy"
+    }
+
+
     msgrender(); //render changes
 }
 
@@ -141,7 +171,22 @@ dirtyEl.textContent = nappycontents;
 for (let i = 0; i < buttonRefs.length; i++) {
      a = buttonStates[playerState];
      buttonRefs[i].disabled = a[i];}
- if (foodstate == 1) {foodBtn.disabled = !foodBtn.disabled;}
+if (foodstate == 1) {foodBtn.disabled = !foodBtn.disabled;}
+//render babystate 🙂😐☹️😭😴
+switch (babyState) {
+    case "happy":
+        babystatusEmoji.textContent = "🙂";
+        break;
+    case "sad":
+        babystatusEmoji.textContent = "☹️";
+        break;
+    case "crying":
+        babystatusEmoji.textContent = "😭";
+        break;
+    case "asleep":
+        babystatusEmoji.textContent = "😴";
+        break;
+}
 }
 
 function renderBars(el, va) { //renders progress bars - pass in element var and register var
